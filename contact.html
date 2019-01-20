@@ -1,13 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html>
   <head>
-    <title>DMBarreiro</title>
+    <title>DMBarreiro - Contact</title>
     <!-- Required meta tags -->
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Required fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- Fontawesome icons CSS -->
@@ -23,13 +22,13 @@
       </button>
       <div id="main-menu" class="navbar-collapse collapse justify-content-end">
         <ul class="navbar-nav text-center px-md-2">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">About</a>
+          <li class="nav-item selectable">
+            <a class="nav-link" href="./index.html">About</a>
           </li>
           <li class="nav-item selectable">
             <a class="nav-link" href="./projects.html">Projects</a>
           </li>
-          <li class="nav-item selectable">
+          <li class="nav-item active">
             <a class="nav-link" href="./contact.html">Contact</a>
           </li>
           <li class="nav-item bg-secondary">
@@ -41,40 +40,67 @@
     <section id="jumbotron" class="pb-6">
       <div class="container-fluid">
         <div class="row">
-          <div class="main-content p-md-5 px-1">
+          <div class="main-content flex-column px-2">
             <div class="container-fluid text-center main-title">
               <div class="row justify-content-center">
-                <p id="name-title">David Martinez Barreiro's personal site</p>
+                <p class="title">Contact</p>
               </div>
             </div>
-            <div class="col-md-3 col-12 py-3">
-              <svg class="rounded" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
-                <title>Placeholder</title>
-                <rect fill="#55595c" width="100%" height="100%"></rect>
-                <text fill="#eceeef" dy=".3em" x="42%" y="50%">Thumbnail</text>
-              </svg>
-            </div>
-            <div class="col-md-9 col-12">
-              <p class="first-p">
-                Hello, I'm David, a software engineer based in Leuven (Belgium).
-              </p>
-              <p>
-                Welcome to my website, I'm interested in web technologies, software, math and music. I've worked as
-                a test engineer of embedded sofware for networking hardware.
-              </p>
-              <p>
-                Please take a look at my personal projects or contact me.
-              </p>
-            </div>
-            <div class="container-fluid text-center py-4">
-              <div class="d-flex justify-content-center">
-                <a class="mx-3" href="./projects.html">
-                  <button type="button" class="btn-lg btn-outline-dark">Check My Projects</button>
-                </a>
-                <a class="mx-3" href="./contact.html">
-                  <button type="button" class="btn-lg btn-outline-dark">Contact</button>
-                </a>
+            <div class="container other-contact d-flex flex-column text-center my-3 mb-md-5 mx-auto">
+              <h4>Primary Contact</h4>
+              <div class="list-group mx-auto">
+                <a class="list-group-item" href="mailto:david@dmbarreiro.com" target="_blank" rel="noopener"><span class="fas fa-envelope"></span> Email</a>
+                <a class="list-group-item" href="https://www.linkedin.com/in/davidmartinezbarreiro/" target="_blank" rel="noopener"><span class="fab fa-linkedin-in"></span> LinkedIn</a>
+                <a class="list-group-item" href="https://github.com/dmbarreiro" target="_blank" rel="noopener"><span class="fab fa-github"></span> GitHub</a>
+                <a class="list-group-item" href="https://twitter.com/hombremultiple" target="_blank" rel="noopener"><span class="fab fa-twitter"></span> Twitter</a>
               </div>
+            </div>
+            <div class="container contact-form my-md-0 my-3 text-center col-md-5">
+              <h4>Contact Form</h4>
+              <p>
+                If none of the primary contact methods suits you send me a message using this form:
+              </p>
+              <form action="mailto:david@dmbarreiro.com" method="POST" enctype="text/plain">
+                <div class="form-group">
+                  <label for="fullname">Full name</label>
+                  <input
+                    type="text"
+                    id="fullname"
+                    class="form-control text-center"
+                    name="full-name"
+                    pattern="[A-Za-z ]+"
+                    placeholder="Jane Doe"
+                    minlength="5"
+                    maxlength="50"
+                    title="Your full name should only contain alphabetical values. e.g. John Doe"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="contact-mehtod">Preferred contact method</label>
+                  <input type="text" list="contact-methods" id="contact-method" class="form-control text-center" name="contact-method" placeholder="phone call" minlength="3" maxlength="25" required/>
+                  <datalist id="contact-methods">
+                    <option value="phone call"></option>
+                    <option value="e-mail"></option>
+                    <option value="twitter"></option>
+                    <option value="whatsapp"></option>
+                    <option value="telegram"></option>
+                  </datalist>
+                </div>
+                <div class="form-group">
+                  <label for="contact-details">Contact details</label>
+                  <input type="text" id="contact-details" class="form-control text-center" name="contact-details" placeholder="+33654321987" minlength="5" maxlength="50" required/>
+                </div>
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <input type="text" id="subject" class="form-control text-center" name="message-subject" size="50" placeholder="Short description of your message." minlength="10" maxlength="100" required/>
+                </div>
+                <div class="form-group">
+                  <label for="content">Message</label>
+                  <textarea id="content" class="form-control text-center" name="message-content" rows="8" cols="50" placeholder="Introduce here the content of your message." minlength="20" maxlength="600" required/></textarea>
+                </div>
+                <button class="btn btn-dark" type="submit">Submit</button>
+              </form>
             </div>
           </div>
         </div>
@@ -89,7 +115,7 @@
       <div class="container-fluid">
         <div class="main-footer d-flex justify-content-between align-items-center">
           <div>
-            <p class="name">v0.9 <em>Coded and designed by David Martinez Barreiro using <a class="dark-bg-link" href="https://getbootstrap.com/" target="_blank" rel="noopener">Bootstrap</a>.</em></p>
+            <p class="name">v0.9 <em>Coded and designed by David Martinez Barreiro using </em><a class="dark-bg-link" href="https://getbootstrap.com/" target="_blank" rel="noopener">Bootstrap</a>.</p>
           </div>
           <div>
             <ul class="nav d-flex justify-content-around">
